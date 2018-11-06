@@ -24,7 +24,7 @@ public class MyService extends BackgroundService {
 			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 			String now = df.format(new Date(System.currentTimeMillis())); 
 
-			String msg = "Hello " + this.mHelloTo + " - its currently " + now;
+			String msg = "Hello Mata Durga " + this.mHelloTo + " - its currently " + now;
 			result.put("Message", msg);
 
 			Log.d(TAG, msg);
