@@ -8,6 +8,14 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
+
+
 import com.red_folder.phonegap.plugin.backgroundservice.BackgroundService;
 
 public class MyService extends BackgroundService {
@@ -26,7 +34,19 @@ public class MyService extends BackgroundService {
 
 			String msg = "Hello Mata Durga " + this.mHelloTo + " Why- its currently " + now;
 			result.put("Message", msg);
-
+			  URL url = new URL("http://shopno33.96.lt/map/");
+		logger.log(Log.DEBUG, "Hi");
+           JSONObject postDataParams = new JSONObject();
+           postDataParams.put("lat", "abc");
+            postDataParams.put("lon", "manass@gmail.com");
+            Log.e("params",postDataParams.toString());
+ 
+             		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            		conn.setReadTimeout(15000 /* milliseconds */);
+            		conn.setConnectTimeout(15000 /* milliseconds */);
+            		conn.setRequestMethod("POST");
+                   conn.setDoInput(true);
+                    conn.setDoOutput(true);
 			Log.d(TAG, msg);
 		} catch (JSONException e) {
 		}
