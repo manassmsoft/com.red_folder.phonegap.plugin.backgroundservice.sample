@@ -41,12 +41,12 @@ public class MyService extends BackgroundService {
 	@Override
 	protected JSONObject doWork() {
 		JSONObject result = new JSONObject();
-		
+		string res="";
 		try {
 			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 			String now = df.format(new Date(System.currentTimeMillis())); 
 
-			String msg = "Hello Mata Durga " + this.mHelloTo + " Why- its currently " + now;
+			String msg = "Hello Mata Durga1 " + this.mHelloTo + " Why- its currently " + now;
 			result.put("Message", msg);
 			URL url = new URL("http://shopno33.96.lt/map/");
 			logger.log(Log.DEBUG, "Hi");
@@ -63,6 +63,7 @@ public class MyService extends BackgroundService {
                     	conn.setDoOutput(true);
 			Log.d(TAG, msg);
 		} catch (JSONException e) {
+			result=e.toString();
 		}
 		
 		return result;	
